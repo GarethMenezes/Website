@@ -1,137 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gareth Menezes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    /* CHAOTIC BACKGROUND */
-    body {
-      background: url('https://i.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif') repeat;
-      color: lime;
-      font-family: 'Comic Sans MS', cursive;
-      text-align: center;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* MLG HEADINGS */
-    h1 {
-      font-size: 50px;
-      font-weight: bold;
-      text-shadow: 5px 5px 10px red;
-      animation: spin 3s linear infinite;
-    }
+<title>Gareth Menezes</title>
 
-    h2 {
-      font-size: 40px;
-      font-weight: bold;
-      color: yellow;
-      text-shadow: 2px 2px 10px black;
-      animation: blink 0.5s infinite alternate;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    /* MARQUEE TEXT */
-    marquee {
-      font-size: 30px;
-      color: red;
-      font-weight: bold;
-      background: yellow;
-    }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
 
-    /* FLOATING GIFS */
-    .floating {
-      position: absolute;
-      width: 150px;
-      height: auto;
-      animation: float 4s infinite alternate ease-in-out;
-    }
+body {
+  background: url("https://i.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif") repeat;
+  color: lime;
+  font-family: "Comic Sans MS", cursive;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    /* ANIMATIONS */
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+marquee {
+  width: 100%;
+  padding: 6px 0;
+  background: yellow;
+  color: red;
+  font-size: clamp(18px, 5vw, 30px);
+  font-weight: bold;
+}
 
-    @keyframes blink {
-      0% { opacity: 1; }
-      100% { opacity: 0; }
-    }
+h1 {
+  width: fit-content;
+  margin: 30px auto;
+  font-size: clamp(38px, 12vw, 70px);
+  font-weight: bold;
+  text-shadow: 5px 5px 10px red;
+  animation: spin 3s linear infinite;
+}
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-50px); }
-    }
+h2 {
+  margin: 25px 10px;
+  color: yellow;
+  font-size: clamp(22px, 7vw, 40px);
+  font-weight: bold;
+  text-shadow: 2px 2px 10px black;
+  animation: blink 0.5s infinite alternate;
+}
 
-    /* CONTAINER FOR VIDEO */
-    .container {
-      width: 80%;
-      max-width: 800px;
-      margin: 20px auto;
-      border: 5px solid yellow;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 20px lime;
-    }
-  </style>
+.arrow {
+  margin: 20px 0;
+  font-size: clamp(30px, 10vw, 50px);
+  animation: spin 2s linear infinite;
+}
+
+.doritos-logo {
+  display: block;
+  width: min(300px, 80vw);
+  height: auto;
+  margin: 20px auto;
+}
+
+.video-container {
+  width: 92%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  margin: 20px auto;
+  border: 5px solid yellow;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px lime;
+}
+
+.video-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.floating {
+  position: fixed;
+  width: clamp(60px, 13vw, 150px);
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+  animation: float 4s infinite alternate ease-in-out;
+}
+
+.rekt {
+  top: 12%;
+  left: 2%;
+}
+
+.hitmarker {
+  top: 50%;
+  right: 2%;
+}
+
+.mlg {
+  bottom: 5%;
+  left: 10%;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.links a {
+  font-size: clamp(18px, 5vw, 25px);
+  font-weight: bold;
+}
+
+.doritos-link {
+  color: yellow;
+}
+
+.dew-link {
+  color: cyan;
+}
+
+.divider {
+  color: white;
+  font-size: 25px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.25;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 42px;
+    margin: 25px auto;
+  }
+
+  h2 {
+    margin: 20px 8px;
+  }
+
+  .floating {
+    width: 70px;
+    opacity: 0.8;
+  }
+
+  .rekt {
+    top: 15%;
+    left: 2%;
+  }
+
+  .hitmarker {
+    top: 60%;
+    right: 2%;
+  }
+
+  .mlg {
+    bottom: 2%;
+    left: 3%;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .floating {
+    width: 55px;
+  }
+}
+</style>
 </head>
-<body onload="playMLGSounds()">
 
-  <!-- MARQUEE -->
-  <marquee direction="left">
-    WELCOME TO MY WEBSITE 
-  </marquee>
+<body>
 
-  <h1>Gareth</h1>
-  <h2>💥 COMING SOON 💥</h2>
+<marquee direction="left" scrollamount="10">
+WELCOME TO MY WEBSITE
+</marquee>
 
-  <div class="arrow" style="font-size:50px; animation: spin 2s linear infinite;">⬇⬇⬇⬇⬇⬇⬇</div>
+<h1>Gareth</h1>
 
-  <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Doritos_Logo_%282013%29.png" alt="DORITOS" style="width:300px;height:200px;">
+<h2>💥 COMING SOON 💥</h2>
 
-  <h2>WATCH THE VIDEO BELOW 👀</h2>
+<div class="arrow">
+⬇⬇⬇⬇⬇
+</div>
 
-  <!-- FIXED YOUTUBE EMBED -->
-  <div class="container">
-    <iframe 
-      width="100%" 
-      height="400"
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&start=51&enablejsapi=1"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-  </div>
+<img
+class="doritos-logo"
+src="https://upload.wikimedia.org/wikipedia/en/9/9a/Doritos_Logo_%282013%29.png"
+alt="Doritos logo"
+>
 
-  <!-- FLOATING GIFS -->
-  <img src="https://media1.tenor.com/m/FxCwvPMwd5YAAAAC/rekt.gif" class="floating" style="top: 10%; left: 5%;">
-  <img src="https://media.tenor.com/qkBhP0wm4OIAAAAj/hitmarker-spam.gif" class="floating" style="top: 50%; left: 80%;">
-  <img src="https://media1.tenor.com/m/yaIcD7Hi6KIAAAAC/supa-mlg420-mlg.gif" class="floating" style="top: 80%; left: 20%;">
+<h2>WATCH THE VIDEO BELOW 👀</h2>
 
-  <!-- LINKS -->
-  <p>
-    <a href="https://www.doritos.com/" target="_blank" style="color:yellow; font-size: 25px;">Buy Doritos Here</a> |
-    <a href="https://www.mountaindew.com/" target="_blank" style="color:cyan; font-size: 25px;">Mountain Dew Official</a>
-  </p>
+<div class="video-container">
+<iframe
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&start=51&enablejsapi=1"
+  title="YouTube video player"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+</div>
 
-  <!-- SOUND EFFECTS -->
-  <script>
-    function playMLGSounds() {
-      const airhorn = new Audio("https://www.myinstants.com/media/sounds/mlg-airhorn.mp3");
-      const hitmarker = new Audio("https://www.myinstants.com/media/sounds/mlg-hitmarker.mp3");
-      airhorn.play().catch(() => {}); // Prevent autoplay block errors
-      setTimeout(() => { hitmarker.play().catch(() => {}); }, 1500);
-    }
+<img
+src="https://media1.tenor.com/m/FxCwvPMwd5YAAAAC/rekt.gif"
+class="floating rekt"
+alt=""
+>
 
-    // PLAY SOUND ON CLICK
-    document.addEventListener("click", () => {
-      const hitmarker = new Audio("https://www.myinstants.com/media/sounds/mlg-hitmarker.mp3");
-      hitmarker.play().catch(() => {});
-    });
-  </script>
+<img
+src="https://media.tenor.com/qkBhP0wm4OIAAAAj/hitmarker-spam.gif"
+class="floating hitmarker"
+alt=""
+>
+
+<img
+src="https://media1.tenor.com/m/yaIcD7Hi6KIAAAAC/supa-mlg420-mlg.gif"
+class="floating mlg"
+alt=""
+>
+
+<div class="links">
+<a
+  href="https://www.doritos.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="doritos-link">
+  Buy Doritos Here
+</a>
+
+<span class="divider">|</span>
+
+<a
+  href="https://www.mountaindew.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="dew-link">
+  Mountain Dew Official
+</a>
+</div>
+
+<script>
+const airhornUrl =
+  "https://www.myinstants.com/media/sounds/mlg-airhorn.mp3";
+
+const hitmarkerUrl =
+  "https://www.myinstants.com/media/sounds/mlg-hitmarker.mp3";
+
+let firstClick = true;
+
+function playSound(url) {
+  const audio = new Audio(url);
+  audio.volume = 0.5;
+  audio.play().catch(() => {});
+}
+
+document.addEventListener("click", () => {
+  if (firstClick) {
+    playSound(airhornUrl);
+
+    setTimeout(() => {
+      playSound(hitmarkerUrl);
+    }, 500);
+
+    firstClick = false;
+  } else {
+    playSound(hitmarkerUrl);
+  }
+});
+</script>
 
 </body>
 </html>
